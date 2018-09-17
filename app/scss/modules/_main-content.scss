@@ -1,0 +1,79 @@
+.app-main {
+	padding: 20px var(--side-indent);
+	@include d-flex($justify-content: space-between);
+}
+
+.sidebar {
+	padding: 12px 15px;
+	background-color: var(--white);
+	border-radius: 2px;
+	flex-basis: 33%;
+	box-shadow: 0 0 25px 0px rgba(52,152,219,0.1);
+	&-header{
+		padding: 12px;
+		margin-bottom: 15px;
+		border-bottom: 1px solid var(--gray-500);
+		@include d-flex($align-items: center, $justify-content: space-between);
+	}
+}
+
+.chat {
+	flex-basis: 70%;
+}
+
+.user-listing {
+	list-type: none;
+	.user {
+		@include d-flex($align-items: center, $justify-content: space-between);
+	}
+
+	.user-ava {
+		position: relative;
+		.count {
+			position: absolute;
+			top: -5px;
+			right: -3px;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			border-radius: 50%;
+			line-height: 20px;
+			background-color: var(--primary);
+			font-weight: 700;
+			box-shadow: 0 0 10px 2px rgba(52,152,219,0.5);
+			color: var(--white);
+		}
+	}
+
+	.user-name {
+		margin-left: 12px;
+		margin-right: 12px;
+		.last-message {
+			max-width: 120px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: inline-block;
+			white-space: nowrap;
+		}
+		.is-typing {
+			display: none;
+		}
+	}
+}
+
+.user-status {
+	flex-align: right;
+}
+
+.status {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: var(--green);
+}
+
+.time {
+	display: block;
+	white-space: nowrap;
+}
