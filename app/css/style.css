@@ -44,6 +44,8 @@ table {
   --gray-300: #2775a9;
   --gray-400: #d6e3ec;
   --gray-500: #ecf0f2;
+  --gray-600: #d4e1ea;
+  --gray-700: #c9d6df;
   --dark: #16315c;
   --blue: #3598db;
   --green: #51dacf;
@@ -2406,7 +2408,7 @@ h4 {
 .btn {
   display: inline-block;
   border-radius: 2px;
-  padding: 12px 30px;
+  padding: 8px 30px;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: bold;
@@ -2443,6 +2445,7 @@ h4 {
   overflow: hidden;
   width: 40px;
   height: 40px;
+  min-width: 40px;
   border-radius: 50%; }
 
 .app-header {
@@ -2518,7 +2521,7 @@ h4 {
   justify-content: space-between; }
 
 .sidebar {
-  padding: 12px 15px;
+  padding-top: 12px;
   background-color: var(--white);
   border-radius: 2px;
   -ms-flex-preferred-size: 33%;
@@ -2526,7 +2529,7 @@ h4 {
   -webkit-box-shadow: 0 0 25px 0px rgba(52, 152, 219, 0.1);
   box-shadow: 0 0 25px 0px rgba(52, 152, 219, 0.1); }
   .sidebar-header {
-    padding: 12px;
+    padding: 12px 15px 15px;
     margin-bottom: 15px;
     border-bottom: 1px solid var(--gray-500);
     display: -webkit-box;
@@ -2554,7 +2557,32 @@ h4 {
     justify-content: space-between;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    padding: 12px 15px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    cursor: pointer; }
+    .user-listing .user.online .status {
+      background-color: var(--green);
+      -webkit-box-shadow: 0 2px 4px 2px #51dacf;
+      box-shadow: 0 2px 4px 2px #51dacf; }
+    .user-listing .user.is-unread-message .count {
+      display: inline-block; }
+    .user-listing .user.is-unread-message .name {
+      color: var(--dark); }
+    .user-listing .user.is-unread-message .last-message,
+    .user-listing .user.is-unread-message .is-typing {
+      color: var(--gray-200); }
+    .user-listing .user.open, .user-listing .user:hover {
+      background-color: var(--app-back); }
+      .user-listing .user.open .name, .user-listing .user:hover .name {
+        color: var(--dark); }
+    .user-listing .user.typing .last-message {
+      display: none; }
+    .user-listing .user.typing .is-typing {
+      display: inline-block; }
+    .user-listing .user.typing .time {
+      display: none; }
   .user-listing .user-ava {
     position: relative; }
     .user-listing .user-ava .count {
@@ -2570,18 +2598,10 @@ h4 {
       font-weight: 700;
       -webkit-box-shadow: 0 0 10px 2px rgba(52, 152, 219, 0.5);
       box-shadow: 0 0 10px 2px rgba(52, 152, 219, 0.5);
-      color: var(--white); }
-  .user-listing .user-name {
-    margin-left: 12px;
-    margin-right: 12px; }
-    .user-listing .user-name .last-message {
-      max-width: 120px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: inline-block;
-      white-space: nowrap; }
-    .user-listing .user-name .is-typing {
+      color: var(--white);
       display: none; }
+  .user-listing .is-typing {
+    display: none; }
 
 .user-status {
   flex-align: right; }
@@ -2591,10 +2611,26 @@ h4 {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--green); }
+  background-color: var(--gray-600);
+  -webkit-box-shadow: 0 0 5px 1px #c9d6df;
+  box-shadow: 0 0 5px 1px #c9d6df; }
 
 .time {
   display: block;
   white-space: nowrap; }
+
+.user-name {
+  margin-left: 12px;
+  margin-right: 12px; }
+  .user-name .name {
+    color: var(--gray-200); }
+
+.last-message {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  white-space: nowrap;
+  color: var(--gray-700); }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,13 +4,13 @@
 }
 
 .sidebar {
-	padding: 12px 15px;
+	padding-top: 12px;
 	background-color: var(--white);
 	border-radius: 2px;
 	flex-basis: 33%;
 	box-shadow: 0 0 25px 0px rgba(52,152,219,0.1);
 	&-header{
-		padding: 12px;
+		padding: 12px 15px 15px;
 		margin-bottom: 15px;
 		border-bottom: 1px solid var(--gray-500);
 		@include d-flex($align-items: center, $justify-content: space-between);
@@ -25,6 +25,50 @@
 	list-type: none;
 	.user {
 		@include d-flex($align-items: center, $justify-content: space-between);
+		padding: 12px 15px;
+		transition: 0.2s;
+		cursor: pointer;
+
+		&.online {
+			.status {
+				background-color: var(--green);
+				box-shadow: 0 2px 4px 2px rgba(81,218,207,1);
+			}
+		}
+
+		&.is-unread-message {
+			.count {
+				display: inline-block;
+			}
+
+			.name {
+				color: var(--dark);
+			}
+
+			.last-message,
+			.is-typing {
+				color: var(--gray-200);
+			}
+		}
+		&.open,
+		&:hover {
+			background-color: var(--app-back);
+			.name {
+				color: var(--dark);
+			}
+		}
+
+		&.typing {
+			.last-message {
+				display: none;
+			}
+			.is-typing {
+				display: inline-block;
+			}
+			.time {
+				display: none;
+			}
+		}
 	}
 
 	.user-ava {
@@ -42,22 +86,11 @@
 			font-weight: 700;
 			box-shadow: 0 0 10px 2px rgba(52,152,219,0.5);
 			color: var(--white);
-		}
-	}
-
-	.user-name {
-		margin-left: 12px;
-		margin-right: 12px;
-		.last-message {
-			max-width: 120px;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			display: inline-block;
-			white-space: nowrap;
-		}
-		.is-typing {
 			display: none;
 		}
+	}
+	.is-typing {
+		display: none;
 	}
 }
 
@@ -70,10 +103,29 @@
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
-	background-color: var(--green);
+	background-color: var(--gray-600);
+	box-shadow: 0 0 5px 1px rgba(201,214,223,1);
 }
 
 .time {
 	display: block;
 	white-space: nowrap;
+}
+
+
+.user-name {
+	margin-left: 12px;
+	margin-right: 12px;
+	.name {
+	color: var(--gray-200);
+	}
+}
+
+.last-message {
+	max-width: 120px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+	white-space: nowrap;
+	color:  var(--gray-700);
 }
