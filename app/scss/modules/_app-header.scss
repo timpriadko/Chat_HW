@@ -49,4 +49,43 @@
 		font-size: 16px;
 		margin-right: 20px;
 	}
+
+	.acc-menu {
+		padding: 10px;
+		background-color: var(--white);
+		position: absolute;
+		top: calc(100% + 5px);
+		left: 50%;
+		border-radius: 4px;
+		transition: 0.2s;
+		color: var(--dark);
+		opacity: 0;
+		visibility: hidden;
+		transform: translate(-50%, 5px);
+		width: 100%;
+		li {
+			@include d-flex($align-items: center, $justify-content: space-between);
+			}
+		.toggle-box {
+			margin-left: 15px;
+			min-width: 35px;
+			height: 20px;
+			position: relative;
+			border-radius: 20px;
+			background-color: #ccc;
+			padding: 2px;
+			cursor: pointer;
+			.toggle-circle{
+				display: inline-block;
+				width: 50%;
+				height: 100%;
+				border-radius: 50%;
+				background-color: var(--white);
+				position: relative;
+				left: 0;
+				transition: 0.2s;
+			}
+		}
+	}
+
 }

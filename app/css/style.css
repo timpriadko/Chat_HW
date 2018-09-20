@@ -55,6 +55,11 @@ table {
   :root {
     --side-indent: 53px; } }
 
+body.night-mode {
+  -app-back: #1f273f;
+  --primary: ;
+  --dark: ; }
+
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2529,6 +2534,50 @@ h4 {
   .app-header .search {
     font-size: 16px;
     margin-right: 20px; }
+  .app-header .acc-menu {
+    padding: 10px;
+    background-color: var(--white);
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    border-radius: 4px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    color: var(--dark);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translate(-50%, 5px);
+    transform: translate(-50%, 5px);
+    width: 100%; }
+    .app-header .acc-menu li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+    .app-header .acc-menu .toggle-box {
+      margin-left: 15px;
+      min-width: 35px;
+      height: 20px;
+      position: relative;
+      border-radius: 20px;
+      background-color: #ccc;
+      padding: 2px;
+      cursor: pointer; }
+      .app-header .acc-menu .toggle-box .toggle-circle {
+        display: inline-block;
+        width: 50%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: var(--white);
+        position: relative;
+        left: 0;
+        -webkit-transition: 0.2s;
+        transition: 0.2s; }
 
 .app-main {
   padding: 20px var(--side-indent);
