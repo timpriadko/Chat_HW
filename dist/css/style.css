@@ -56,9 +56,9 @@ table {
     --side-indent: 53px; } }
 
 body.night-mode {
-  -app-back: #1f273f;
-  --primary: ;
-  --dark: ; }
+  --app-back: #1f273f;
+  --primary: #99c2de;
+  --dark: #99c2de; }
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -2447,10 +2447,10 @@ h4 {
 
 .application {
   position: relative;
-  max-height: 770px;
+  max-height: 780px;
   max-width: 960px;
   overflow: hidden;
-  background-color: var(--app-black, #f5f6f8); }
+  background-color: var(--app-back, #f5f6f8); }
 
 /*Avatar Styles*/
 .avatar {
@@ -2502,6 +2502,17 @@ h4 {
         margin-bottom: 5px; }
     .app-header .toggle-button:hover .toggle-button-element {
       background-color: var(--dark, black); }
+    .app-header .toggle-button.toggle-active .toggle-button-element:nth-of-type(1) {
+      -webkit-transform: translateY(8px) rotate(45deg);
+      transform: translateY(8px) rotate(45deg); }
+    .app-header .toggle-button.toggle-active .toggle-button-element:nth-of-type(2) {
+      opacity: 0; }
+    .app-header .toggle-button.toggle-active .toggle-button-element:nth-of-type(3) {
+      -webkit-transform: translateY(-8px) rotate(-45deg);
+      transform: translateY(-8px) rotate(-45deg); }
+    @media (min-width: 768px) {
+      .app-header .toggle-button {
+        display: none; } }
   .app-header .right-block {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2511,6 +2522,9 @@ h4 {
     align-items: center; }
   .app-header .avatar {
     margin-right: 25px; }
+  .app-header .acc-text {
+    position: relative;
+    cursor: pointer; }
   .app-header .acc-info {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2547,18 +2561,20 @@ h4 {
     opacity: 0;
     visibility: hidden;
     -webkit-transform: translate(-50%, 5px);
-    transform: translate(-50%, 5px);
-    width: 100%; }
+    transform: translate(-50%, 5px); }
+    .app-header .acc-menu.acc-menu-open {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0); }
     .app-header .acc-menu li {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
       -webkit-box-align: center;
       -ms-flex-align: center;
-      align-items: center; }
+      align-items: center;
+      white-space: nowrap; }
     .app-header .acc-menu .toggle-box {
       margin-left: 15px;
       min-width: 35px;
@@ -2570,7 +2586,7 @@ h4 {
       cursor: pointer; }
       .app-header .acc-menu .toggle-box .toggle-circle {
         display: inline-block;
-        width: 50%;
+        width: 54%;
         height: 100%;
         border-radius: 50%;
         background-color: var(--white);
@@ -2578,6 +2594,10 @@ h4 {
         left: 0;
         -webkit-transition: 0.2s;
         transition: 0.2s; }
+      .app-header .acc-menu .toggle-box.toggle-active {
+        background-color: var(--green); }
+        .app-header .acc-menu .toggle-box.toggle-active .toggle-circle {
+          left: 50%; }
 
 .app-main {
   padding: 20px var(--side-indent);
@@ -2628,7 +2648,7 @@ h4 {
     align-items: center; }
   .sidebar .user-listing {
     overflow-y: auto;
-    max-height: 550px; }
+    max-height: 580px; }
 
 .chat {
   display: -webkit-box;
@@ -2744,7 +2764,9 @@ h4 {
   .chat-footer {
     margin-top: auto; }
     .chat-footer .chat-form {
-      position: relative; }
+      position: relative;
+      -webkit-box-shadow: 0 0 25px 0px rgba(52, 152, 219, 0.05);
+      box-shadow: 0 0 25px 0px rgba(52, 152, 219, 0.05); }
     .chat-footer .input-file {
       display: none; }
     .chat-footer .label-file {
@@ -2774,7 +2796,7 @@ h4 {
       top: 50%;
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
-      right: 5px;
+      right: 10px;
       -webkit-box-shadow: 0 0 15px 3px rgba(52, 152, 219, 0.3);
       box-shadow: 0 0 15px 3px rgba(52, 152, 219, 0.3); }
     .chat-footer .input-message {

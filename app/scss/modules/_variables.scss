@@ -1,5 +1,6 @@
 //Colors
 :root{
+	
 	--primary: #3498db;
 	--white: #fff;
 	--app-back: #f5f6f8;
@@ -25,7 +26,7 @@
 }
 
 body.night-mode {
-	-app-back: #1f273f;
-	--primary: ;
-	--dark: ;
+	--app-back: #1f273f;
+	--primary: #99c2de;
+	--dark: #99c2de;
 }
